@@ -1,4 +1,6 @@
-# ![Icon](figures/psi_logo.png)<!-- .element height="50%" width="50%" --> HUX (Heliospheric Upwind Extrapolation)
+# ![Icon](figures/rsz_psi_logo.png)<!-- .element height="10%" width="10%" --> HUX (Heliospheric Upwind Extrapolation)
+
+
 
 The following notebooks include an analysis of the HUX model (Heliospheric Upwind Extrapolation) developed by Riley et al [1]. 
 The HUX model is a technique to map solar wind streams from the Sun to 1 AU. By neglecting magnetic field, pressure gradient and gravity, the fluid momentum equation reduces to the inviscid Burgers' equation.
