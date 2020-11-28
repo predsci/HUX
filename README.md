@@ -3,7 +3,7 @@
 The following notebooks include an analysis of the HUX model (Heliospheric Upwind Extrapolation) developed by Riley et al [1]. 
 The HUX model is a technique to map solar wind streams from the Sun to 1 AU. By neglecting magnetic field, pressure gradient and gravity, the fluid momentum equation reduces to the inviscid Burgers' equation.
 
-In order, to understand the weight of adding thermal pressure and proton mass density to forecast solar wind streams, I applied PDE-FIND a parsimonious algorithm developed by Rudy et al [2]. Given a large library of candidate terms consisting partials and nonlinearities in spatial domain, PDE-FIND finds the optimal subset of active library terms from a time sequential data-set.
+In order, to understand the weight of adding thermal pressure and proton mass density to forecast solar wind streams, I applied PDE-FIND an algorithm developed by Rudy et al [2]. Given a large library of candidate terms consisting partials and nonlinearities in spatial domain, PDE-FIND finds the optimal subset of active library terms from a time sequential data-set.
 
 The results verify that the HUX model is a parsimonious model which matches the dynamical evolution captured by global models, yet is as simple as the ballistic approximation.
 
