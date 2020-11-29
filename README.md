@@ -8,6 +8,45 @@ In order, to understand the weight of adding thermal pressure and proton mass de
 The results verify that the HUX model is a parsimonious model which matches the dynamical evolution captured by global models, yet is as simple as the ballistic approximation.
 
 
+
+The solar wind streams motion can be described as the fluid momentum equation in corotating frame of reference:
+	
+$-\Omega_{rot} \frac{\partial v}{\partial \phi} + (v \cdot \nabla)v = \frac{1}{\rho} \nabla P - \frac{G M_{s}}{r^2}e_{r}$
+
+By neglecting magnetic field, pressure gradient and gravity, the fluid momentum equation reduces to the inviscid Burgers' equation.
+
+$\frac{\partial v_{r}}{\partial \phi} = \frac{1}{\Omega_{rot}} v_{r} \frac{\partial v_{r}}{\partial r}$
+
+By the upwind difference algorithm, we can discretize the inviscid Burgers' equation as follows:
+
+$v_{i+1, j} = v_{i, j} - \Delta r ( a^{+} \Delta^{-} + a^{-}\Delta^{+})$
+
+The indicies i and j refer to the r and $\phi$ grids, respectively where
+    
+$a^{+} = max(-\frac{\Omega_{rot}}{v_{i,j}}, 0)$
+
+$a^{-} = min(-\frac{\Omega_{rot}}{v_{i,j}}, 0)$
+
+$\Delta^{-} = \frac{v_{i,j} - v_{i,j-1}}{\Delta \phi}$
+
+$\Delta^{+} = \frac{v_{i,j+1} - v_{i,j}}{\Delta \phi}$
+
+Since $\frac{-\Omega_{rot}}{v_{i,j}}$ is always less than zero for the solar wind, then $a^{+} = 0$. 
+Therefore, equation (3) simplifies to
+    
+
+$v_{i+1, j} = v_{i, j} + \frac{\Delta r \Omega_{rot}}{v_{i,j}} (\frac{v_{i, j+1} - v_{i,j}}{\Delta \phi}) $
+
+In order to add the effect of acceleration from 30 $R_{\odot}$ to 1 AU, the following velocity boost is applied to the inner boundary.
+    
+$v_{acc}(r)=\alpha v_{ro}(1 - \exp(-r/r_{h}))$
+
+Where $v_{ro}$ is the speed at 30$R_{\odot}$, $\alpha$ and $r_{h}$ are constants. Therefore, the velocity boost results in $v(r) = v_{ro} + v_{acc}(r)$. 
+
+The simple upwind technique resulted in pearson correlation coefficient of 0.98.
+Figure 1(a) shows the initial proton velocity profile at 30$R_{\odot}$. Figure 1(b) shows the  heliospheric MHD model solution at 1 AU. Lastly, figure 1(c) shows the results of the HUX model mapping from 30 $R_{\odot}$ to 1 AU. By comparing figure 1(b) and 1(c) it is visible that the HUX model is a close approximation to the heliospheric MHD model solutions. 
+
+![](figures/figure1.png)
 # References
 [1] [Riley, P. and Lionello, Roberto. Mapping solar wind streams from the Sun to 1 AU: A comparison of techniques. Solar Physics, 270(2), 575–592, 2011.](https://www.researchgate.net/publication/226565167_Mapping_Solar_Wind_Streams_from_the_Sun_to_1_AU_A_Comparison_of_Techniques)
 
