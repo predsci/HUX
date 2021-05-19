@@ -23,6 +23,8 @@ to the source longitude of streams; (2) is almost as accurate, but considerably 
 than MHD models; and (3) can be applied as a general tool to magnetically connect different
 regions of the inner heliosphere together, as well as providing a simple 3-D reconstruction.
 
+# Paper
+[Riley P and Issan O (2021) Using a Heliospheric Upwinding eXtrapolation Technique to Magnetically Connect Different Regions of the Heliosphere. Front. Phys. 9:679497. doi: 10.3389/fphy.2021.679497](https://www.frontiersin.org/articles/10.3389/fphy.2021.679497/full?&utm_source=Email_to_authors_&utm_medium=Email&utm_content=T1_11.5e1_author&utm_campaign=Email_publication&field=&journalName=Frontiers_in_Physics&id=679497)
 
 # References
 [1] [Riley, P. and Lionello, Roberto. Mapping solar wind streams from the Sun to 1 AU: A comparison of techniques. Solar Physics, 270(2), 575–592, 2011.](https://www.researchgate.net/publication/226565167_Mapping_Solar_Wind_Streams_from_the_Sun_to_1_AU_A_Comparison_of_Techniques)
